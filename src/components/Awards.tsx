@@ -1,4 +1,6 @@
-import { motion } from "motion/react";
+"use client";
+
+import { motion } from "framer-motion";
 import { Trophy } from "lucide-react";
 
 export default function Awards() {
@@ -41,27 +43,26 @@ export default function Awards() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative rounded-xl p-6 text-center transition-all duration-300 ${
-                  award.isGrand
+                className={`relative rounded-xl p-6 text-center transition-all duration-300 ${award.isGrand
                     ? "bg-gradient-to-br from-[#FFCC4D]/20 via-[#E4B83A]/10 to-[#8F6A17]/20 border-2 transform md:scale-[1.12]"
                     : "bg-white/5 border border-white/20 hover:bg-white/10"
-                }`}
+                  }`}
                 style={
                   award.isGrand
                     ? {
-                        borderColor: 'rgba(228, 184, 58, 0.5)',
-                        boxShadow: '0 0 60px rgba(255, 184, 0, 0.15), -8px -8px 35px rgba(228, 184, 58, 0.25), 0 0 10px rgba(228, 184, 58, 0.35)',
-                        borderRadius: award.year === '2024' ? '1rem' : '0.75rem',
-                        marginTop: index === 0 ? '2px' : index === 2 ? '3px' : '0',
-                      }
+                      borderColor: 'rgba(228, 184, 58, 0.5)',
+                      boxShadow: '0 0 60px rgba(255, 184, 0, 0.15), -8px -8px 35px rgba(228, 184, 58, 0.25), 0 0 10px rgba(228, 184, 58, 0.35)',
+                      borderRadius: award.year === '2024' ? '1rem' : '0.75rem',
+                      marginTop: index === 0 ? '2px' : index === 2 ? '3px' : '0',
+                    }
                     : {
-                        marginTop: index === 0 ? '2px' : index === 2 ? '3px' : '0',
-                      }
+                      marginTop: index === 0 ? '2px' : index === 2 ? '3px' : '0',
+                    }
                 }
               >
                 {/* グランプリの特別マーク */}
                 {award.isGrand && (
-                  <div 
+                  <div
                     className="absolute -top-3 -right-3 text-black text-xs px-3 py-1 rounded-full transform rotate-12 shadow-lg"
                     style={{
                       background: 'linear-gradient(135deg, #FFCC4D 0%, #E4B83A 50%, #8F6A17 100%)',
@@ -73,15 +74,14 @@ export default function Awards() {
 
                 {/* 年号 */}
                 <div
-                  className={`mb-3 ${
-                    award.isGrand ? "" : "text-[#C62A2A]"
-                  }`}
+                  className={`mb-3 ${award.isGrand ? "" : "text-[#C62A2A]"
+                    }`}
                   style={{
                     fontSize: award.isGrand ? '3.5rem' : '3rem',
                     lineHeight: '1',
-                    color: award.isGrand 
-                      ? '#FFCC4D' 
-                      : award.year === '2023' 
+                    color: award.isGrand
+                      ? '#FFCC4D'
+                      : award.year === '2023'
                         ? '#B52525'  // 明度-8（暗め）
                         : award.year === '2025'
                           ? '#D13030'  // 明度+8（明るめ）
@@ -93,20 +93,19 @@ export default function Awards() {
                 </div>
 
                 {/* トロフィーアイコン */}
-                <div 
+                <div
                   className="flex justify-center mb-2"
                   style={{
                     marginTop: award.year === '2023' ? '1px' : award.year === '2025' ? '-2px' : '0',
                   }}
                 >
                   <Trophy
-                    className={`w-8 h-8 ${
-                      award.isGrand ? "" : "text-white/60"
-                    }`}
+                    className={`w-8 h-8 ${award.isGrand ? "" : "text-white/60"
+                      }`}
                     style={{
                       color: award.isGrand ? '#E4B83A' : undefined,
-                      strokeWidth: award.year === '2023' 
-                        ? '1.8' 
+                      strokeWidth: award.year === '2023'
+                        ? '1.8'
                         : award.year === '2024'
                           ? '2.2'
                           : '2.0',
@@ -116,9 +115,8 @@ export default function Awards() {
 
                 {/* 受賞名 */}
                 <p
-                  className={`text-sm md:text-base ${
-                    award.isGrand ? "" : "text-gray-300"
-                  }`}
+                  className={`text-sm md:text-base ${award.isGrand ? "" : "text-gray-300"
+                    }`}
                   style={{
                     color: award.isGrand ? '#FFCC4D' : undefined,
                   }}

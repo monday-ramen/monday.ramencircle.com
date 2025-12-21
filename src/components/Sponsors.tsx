@@ -1,4 +1,6 @@
-import { motion } from "motion/react";
+"use client";
+
+import { motion } from "framer-motion";
 
 interface Sponsor {
   name: string;
@@ -101,8 +103,8 @@ export default function Sponsors() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-16"
         >
-          <h3 
-            className="text-center mb-12" 
+          <h3
+            className="text-center mb-12"
             style={{ fontSize: '24px', color: '#D7C38A', lineHeight: '1.5' }}
           >
             Platinum
@@ -110,14 +112,14 @@ export default function Sponsors() {
           <div className="text-center space-y-3">
             {platinumSponsors.map((sponsor, index) => (
               <div key={index}>
-                <p 
+                <p
                   className="text-white/90"
                   style={{ fontSize: '32px', lineHeight: '1.5' }}
                 >
                   {sponsor.name}
                 </p>
                 {sponsor.representative && (
-                  <p 
+                  <p
                     className="text-white/85"
                     style={{ fontSize: '28px', lineHeight: '1.5' }}
                   >
@@ -137,8 +139,8 @@ export default function Sponsors() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mb-12"
         >
-          <h3 
-            className="text-center mb-10" 
+          <h3
+            className="text-center mb-10"
             style={{ fontSize: '22px', color: '#E0C777', lineHeight: '1.5' }}
           >
             Gold
@@ -146,14 +148,14 @@ export default function Sponsors() {
           <div className="text-center space-y-2">
             {goldSponsors.map((sponsor, index) => (
               <div key={index}>
-                <p 
+                <p
                   className="text-white/90"
                   style={{ fontSize: '26px', lineHeight: '1.5' }}
                 >
                   {sponsor.name}
                 </p>
                 {sponsor.representative && (
-                  <p 
+                  <p
                     className="text-white/85"
                     style={{ fontSize: '22px', lineHeight: '1.5' }}
                   >
@@ -173,16 +175,16 @@ export default function Sponsors() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-16"
         >
-          <h3 
-            className="text-center mb-8" 
+          <h3
+            className="text-center mb-8"
             style={{ fontSize: '20px', color: '#C0C0C0', lineHeight: '1.5' }}
           >
             Silver
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-center">
             {silverSponsors.map((sponsor, index) => (
-              <p 
-                key={index} 
+              <p
+                key={index}
                 className="text-white/90"
                 style={{ fontSize: '18px', lineHeight: '1.5' }}
               >

@@ -1,4 +1,6 @@
-import { motion } from "motion/react";
+"use client";
+
+import { motion } from "framer-motion";
 import { Quote, Heart, Instagram } from "lucide-react";
 import XLogo from "./icons/XLogo";
 

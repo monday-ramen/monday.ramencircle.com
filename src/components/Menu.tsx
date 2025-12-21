@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Flame, Star, Sparkles } from "lucide-react";
 import imgTonzuke from "@/assets/f73be0b4590fe864d582c931ffac2914f826bf91.png";
 import imgToriRamen from "@/assets/14205b5bc9c78d1a7fecc75cd0233a3ce953d3b0.png";

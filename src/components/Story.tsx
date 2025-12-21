@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import React from "react";
 import img2022 from "@/assets/f11dcc26051b1eee1910bff26606051b62d412ec.png";
 import img2023 from "@/assets/e5a5c46aed2d6bbdd39d64ea4c6a90a4bf56df9f.png";
@@ -99,10 +99,10 @@ export default function Story() {
                   {/* グラデーション（写真の魅力を最大化） */}
                   <div
                     className={`absolute inset-0 ${item.year === "2022"
-                        ? "bg-gradient-to-t from-black/70 via-black/20 to-black/30"
-                        : item.year === "2023"
-                          ? "bg-gradient-to-t from-black/40 via-transparent to-black/20"
-                          : "bg-gradient-to-t from-black/60 via-transparent to-black/20"
+                      ? "bg-gradient-to-t from-black/70 via-black/20 to-black/30"
+                      : item.year === "2023"
+                        ? "bg-gradient-to-t from-black/40 via-transparent to-black/20"
+                        : "bg-gradient-to-t from-black/60 via-transparent to-black/20"
                       }`}
                   />
                 </div>
@@ -115,8 +115,8 @@ export default function Story() {
                   <div className="flex flex-wrap gap-2">
                     <div
                       className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm ${item.award === "最優秀賞（グランプリ）"
-                          ? "bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border border-yellow-500/50 text-yellow-400"
-                          : "bg-white/10 border border-white/30 text-white"
+                        ? "bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border border-yellow-500/50 text-yellow-400"
+                        : "bg-white/10 border border-white/30 text-white"
                         }`}
                     >
                       <span>🏆</span>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import React from "react";
 import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/c2e8793095e2dc851257f0457e94cde615331069.png";

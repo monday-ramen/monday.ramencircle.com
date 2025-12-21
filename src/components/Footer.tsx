@@ -1,3 +1,5 @@
+"use client";
+
 import { Heart, Instagram } from "lucide-react";
 import XLogo from "./icons/XLogo";
 

@@ -1,4 +1,6 @@
-import { motion } from "motion/react";
+"use client";
+
+import { motion } from "framer-motion";
 import { MapPin, Clock, Calendar, Train, Instagram } from "lucide-react";
 
 export default function Access() {
@@ -100,7 +102,7 @@ export default function Access() {
                 <div>
                   <h3 className="text-xl mb-2">お問い合わせ</h3>
                   <p className="text-white mb-1">Instagram DM にて対応しています</p>
-                  <a 
+                  <a
                     href="https://www.instagram.com/ramen_monday_/"
                     target="_blank"
                     rel="noopener noreferrer"

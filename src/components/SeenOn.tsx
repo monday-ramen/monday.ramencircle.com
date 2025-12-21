@@ -1,6 +1,8 @@
+"use client";
+
 import image_5cb6fa8e8afaa654e9340d3432b6a715f7bdf1df from '@/assets/5cb6fa8e8afaa654e9340d3432b6a715f7bdf1df.png';
 import image_a6a19dfc227523e05970a799c83a77279a777793 from '@/assets/a6a19dfc227523e05970a799c83a77279a777793.png';
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Newspaper, Radio, MessageCircle } from "lucide-react";
 import radioImage from "@/assets/9f4ebce60440ba5d80877da3f97af5d96bc51d85.png";
 import gogaiNetImage from "@/assets/72b7618f36abca1adf83316d6c81e511b645ba7a.png";
