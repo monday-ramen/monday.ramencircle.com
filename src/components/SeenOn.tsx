@@ -1,9 +1,9 @@
-import image_5cb6fa8e8afaa654e9340d3432b6a715f7bdf1df from 'figma:asset/5cb6fa8e8afaa654e9340d3432b6a715f7bdf1df.png';
-import image_a6a19dfc227523e05970a799c83a77279a777793 from 'figma:asset/a6a19dfc227523e05970a799c83a77279a777793.png';
+import image_5cb6fa8e8afaa654e9340d3432b6a715f7bdf1df from '@/assets/5cb6fa8e8afaa654e9340d3432b6a715f7bdf1df.png';
+import image_a6a19dfc227523e05970a799c83a77279a777793 from '@/assets/a6a19dfc227523e05970a799c83a77279a777793.png';
 import { motion } from "motion/react";
 import { Newspaper, Radio, MessageCircle } from "lucide-react";
-import radioImage from "figma:asset/9f4ebce60440ba5d80877da3f97af5d96bc51d85.png";
-import gogaiNetImage from "figma:asset/72b7618f36abca1adf83316d6c81e511b645ba7a.png";
+import radioImage from "@/assets/9f4ebce60440ba5d80877da3f97af5d96bc51d85.png";
+import gogaiNetImage from "@/assets/72b7618f36abca1adf83316d6c81e511b645ba7a.png";
 
 const mediaFeatures = [
   {
@@ -100,9 +100,9 @@ export default function SeenOn() {
           >
             {/* 赤ライン */}
             <div className="w-24 h-0.5 bg-[#C62A2A] mx-auto mb-6" />
-            
+
             <h3 className="text-4xl md:text-5xl mb-3 tracking-wide">In the Media</h3>
-            
+
             <p className="text-[#BDBDBD] text-lg max-w-2xl mx-auto leading-relaxed">
               メディアにも多数取り上げられ、注目が高まっています。
             </p>
