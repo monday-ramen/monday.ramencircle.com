@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+// 画像パスは @/assets/... に修正してください（ファイル名が長い場合は変更後の名前で）
 import heroImage from "@/assets/c2e8793095e2dc851257f0457e94cde615331069.png";
 
 export default function Hero() {
@@ -14,10 +16,12 @@ export default function Hero() {
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* 背景画像 */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src={heroImage}
           alt="麺上げの瞬間"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          className="object-cover"
           style={{
             filter: "saturate(0.9) contrast(1.1)",
           }}

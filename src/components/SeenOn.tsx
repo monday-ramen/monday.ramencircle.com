@@ -1,9 +1,13 @@
 "use client";
 
-import image_5cb6fa8e8afaa654e9340d3432b6a715f7bdf1df from '@/assets/5cb6fa8e8afaa654e9340d3432b6a715f7bdf1df.png';
-import image_a6a19dfc227523e05970a799c83a77279a777793 from '@/assets/a6a19dfc227523e05970a799c83a77279a777793.png';
+import React from "react";
 import { motion } from "framer-motion";
 import { Newspaper, Radio, MessageCircle } from "lucide-react";
+import Image from "next/image";
+
+// 👇 画像パスの修正
+import image_5cb6fa from "@/assets/5cb6fa8e8afaa654e9340d3432b6a715f7bdf1df.png";
+import image_a6a19d from "@/assets/a6a19dfc227523e05970a799c83a77279a777793.png";
 import radioImage from "@/assets/9f4ebce60440ba5d80877da3f97af5d96bc51d85.png";
 import gogaiNetImage from "@/assets/72b7618f36abca1adf83316d6c81e511b645ba7a.png";
 
@@ -22,7 +26,7 @@ const mediaFeatures = [
     title: "東京理科大生が野田でラーメン店　サークルメンバーら、好きが高じて週1で営業",
     source: "朝日れすかPLUS",
     date: "2025.10.06",
-    image: image_a6a19dfc227523e05970a799c83a77279a777793,
+    image: image_a6a19d,
     icon: Newspaper,
     link: "https://resuka.co.jp/townnews/2025/10/3793/",
   },
@@ -40,7 +44,7 @@ const mediaFeatures = [
     title: "「月曜だけなのにこんなに並ぶなんて」",
     source: "SNS・口コミより",
     date: "2025",
-    image: image_5cb6fa8e8afaa654e9340d3432b6a715f7bdf1df,
+    image: image_5cb6fa,
     icon: MessageCircle,
     link: undefined,
   },
@@ -53,10 +57,12 @@ export default function SeenOn() {
       <div className="relative h-[60vh] md:h-[70vh] overflow-hidden">
         {/* 背景画像 */}
         <div className="absolute inset-0">
-          <img
-            src={image_5cb6fa8e8afaa654e9340d3432b6a715f7bdf1df}
+          <Image
+            src={image_5cb6fa}
             alt="行列の様子"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            priority
           />
           {/* グラデーションオーバーレイ（上から40%） */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90" />
@@ -72,7 +78,7 @@ export default function SeenOn() {
             className="text-center max-w-4xl"
           >
             {/* メインコピー */}
-            <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight z-10 relative text-white">
               気づけば、月曜が
               <br />
               <span className="text-[#C62A2A]">行列の理由</span>
@@ -80,7 +86,7 @@ export default function SeenOn() {
             </h2>
 
             {/* サブコピー */}
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed z-10 relative">
               学生の挑戦を、待ってくれる人がいる。
               <br />
               多くの人に応援されながら、月曜だけの挑戦は続いています。
@@ -102,9 +108,9 @@ export default function SeenOn() {
           >
             {/* 赤ライン */}
             <div className="w-24 h-0.5 bg-[#C62A2A] mx-auto mb-6" />
-
-            <h3 className="text-4xl md:text-5xl mb-3 tracking-wide">In the Media</h3>
-
+            
+            <h3 className="text-4xl md:text-5xl mb-3 tracking-wide text-white">In the Media</h3>
+            
             <p className="text-[#BDBDBD] text-lg max-w-2xl mx-auto leading-relaxed">
               メディアにも多数取り上げられ、注目が高まっています。
             </p>
@@ -118,13 +124,14 @@ export default function SeenOn() {
                 <>
                   {/* 画像セクション */}
                   <div className="relative h-48 overflow-hidden">
-                    <img
+                    <Image
                       src={feature.image}
                       alt={feature.title}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />
                     {/* アイコンバッジ */}
-                    <div className="absolute top-4 right-4 bg-[#C62A2A] p-2.5 rounded-full">
+                    <div className="absolute top-4 right-4 bg-[#C62A2A] p-2.5 rounded-full z-10">
                       <Icon className="w-5 h-5 text-white" />
                     </div>
                   </div>
@@ -137,7 +144,7 @@ export default function SeenOn() {
                     </div>
 
                     {/* タイトル */}
-                    <h4 className="text-lg md:text-xl mb-3 leading-snug flex-1">
+                    <h4 className="text-lg md:text-xl mb-3 leading-snug flex-1 text-white">
                       {feature.title}
                     </h4>
 

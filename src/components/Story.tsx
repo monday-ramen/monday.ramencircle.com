@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import React from "react";
+import Image from "next/image";
+// 画像パスを修正 (src/assets/内のファイル名に合わせてください)
 import img2022 from "@/assets/f11dcc26051b1eee1910bff26606051b62d412ec.png";
 import img2023 from "@/assets/e5a5c46aed2d6bbdd39d64ea4c6a90a4bf56df9f.png";
 import img2024 from "@/assets/dcfc18b6194c46fc3117fbd93b6ca877d26dd0da.png";
@@ -68,42 +70,46 @@ export default function Story() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                } gap-8 md:gap-12 items-center`}
+              className={`flex flex-col ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } gap-8 md:gap-12 items-center`}
             >
               {/* 写真セクション */}
               <div className="w-full md:w-1/2 relative group">
                 <div className="relative h-80 md:h-96 rounded-lg overflow-hidden">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                     style={
                       item.year === "2022"
                         ? {
-                          filter: "saturate(0.85) contrast(1.15) brightness(0.95)",
-                        }
+                            filter: "saturate(0.85) contrast(1.15) brightness(0.95)",
+                          }
                         : item.year === "2023"
-                          ? {
+                        ? {
                             filter: "brightness(0.9) contrast(1.05)",
                           }
-                          : undefined
+                        : undefined
                     }
                   />
                   {/* 年号オーバーレイ（写真の上） */}
-                  <div className="absolute top-6 left-6">
+                  <div className="absolute top-6 left-6 z-10">
                     <span className="text-6xl md:text-7xl text-white/20 font-black">
                       {item.year}
                     </span>
                   </div>
                   {/* グラデーション（写真の魅力を最大化） */}
-                  <div
-                    className={`absolute inset-0 ${item.year === "2022"
-                      ? "bg-gradient-to-t from-black/70 via-black/20 to-black/30"
-                      : item.year === "2023"
+                  <div 
+                    className={`absolute inset-0 z-0 ${
+                      item.year === "2022"
+                        ? "bg-gradient-to-t from-black/70 via-black/20 to-black/30"
+                        : item.year === "2023"
                         ? "bg-gradient-to-t from-black/40 via-transparent to-black/20"
                         : "bg-gradient-to-t from-black/60 via-transparent to-black/20"
-                      }`}
+                    }`}
                   />
                 </div>
               </div>
@@ -114,10 +120,11 @@ export default function Story() {
                 {item.award && (
                   <div className="flex flex-wrap gap-2">
                     <div
-                      className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm ${item.award === "最優秀賞（グランプリ）"
-                        ? "bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border border-yellow-500/50 text-yellow-400"
-                        : "bg-white/10 border border-white/30 text-white"
-                        }`}
+                      className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm ${
+                        item.award === "最優秀賞（グランプリ）"
+                          ? "bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border border-yellow-500/50 text-yellow-400"
+                          : "bg-white/10 border border-white/30 text-white"
+                      }`}
                     >
                       <span>🏆</span>
                       <span>{item.award}</span>
@@ -152,16 +159,18 @@ export default function Story() {
         >
           {/* 仕込みの様子 */}
           <div className="relative h-80 md:h-96 rounded-lg overflow-hidden group">
-            <img
+            <Image
               src={imgShikomi}
               alt="仕込みの様子"
-              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover transform group-hover:scale-105 transition-transform duration-700"
             />
             {/* 心理学的に最適化したグラデーション（暗め＋下から） */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-
+            
             {/* 二段構成テキスト（左下配置） */}
-            <div className="absolute bottom-0 left-0 p-6 space-y-2">
+            <div className="absolute bottom-0 left-0 p-6 space-y-2 z-10">
               <h3 className="text-2xl md:text-3xl">仕込みの様子</h3>
               <p className="text-gray-200 text-sm md:text-base leading-relaxed max-w-md">
                 月曜の一杯のために、学生が毎週コツコツ準備しています。<br />
@@ -172,16 +181,18 @@ export default function Story() {
 
           {/* 僕らの自信作 */}
           <div className="relative h-80 md:h-96 rounded-lg overflow-hidden group">
-            <img
+            <Image
               src={imgRamen}
               alt="完成したラーメン"
-              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover transform group-hover:scale-105 transition-transform duration-700"
             />
             {/* 心理学的に最適化したグラデーション */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-
+            
             {/* 二段構成テキスト（左下配置） */}
-            <div className="absolute bottom-0 left-0 p-6 space-y-2">
+            <div className="absolute bottom-0 left-0 p-6 space-y-2 z-10">
               <h3 className="text-2xl md:text-3xl">僕らの自信作</h3>
               <p className="text-gray-200 text-sm md:text-base leading-relaxed max-w-md">
                 失敗しながら、工夫しながら。<br />

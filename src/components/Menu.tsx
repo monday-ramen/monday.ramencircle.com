@@ -1,7 +1,11 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import { Flame, Star, Sparkles } from "lucide-react";
+import Image from "next/image";
+
+// 👇 画像パスの修正
 import imgTonzuke from "@/assets/f73be0b4590fe864d582c931ffac2914f826bf91.png";
 import imgToriRamen from "@/assets/14205b5bc9c78d1a7fecc75cd0233a3ce953d3b0.png";
 
@@ -14,6 +18,7 @@ const menuItems = [
     image: imgTonzuke,
     badge: "学生1番の自信作",
     spicy: false,
+    isWeekly: false,
   },
   {
     id: 2,
@@ -23,6 +28,7 @@ const menuItems = [
     image: imgToriRamen,
     badge: null,
     spicy: false,
+    isWeekly: false,
   },
   {
     id: 3,
@@ -48,7 +54,7 @@ export default function Menu() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl mb-4">MENU</h2>
+          <h2 className="text-4xl md:text-5xl mb-4 text-white">MENU</h2>
           <div className="w-24 h-1 bg-[#C62A2A] mx-auto mb-6" />
           <p className="text-gray-400 text-lg">
             学生が本気で向き合った、3つの味。
@@ -68,9 +74,10 @@ export default function Menu() {
             >
               {/* バッジ */}
               {item.badge && (
-                <div
-                  className={`absolute top-4 left-4 z-10 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1 ${item.isWeekly ? 'bg-[#D32F2F] font-bold' : 'bg-[#C62A2A]'
-                    }`}
+                <div 
+                  className={`absolute top-4 left-4 z-10 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1 ${
+                    item.isWeekly ? 'bg-[#D32F2F] font-bold' : 'bg-[#C62A2A]'
+                  }`}
                 >
                   <Star className="w-4 h-4" />
                   {item.badge}
@@ -93,31 +100,35 @@ export default function Menu() {
 
               {/* 画像 */}
               <div className="relative h-72 overflow-hidden">
-                <img
+                <Image
                   src={item.image}
                   alt={item.name}
-                  className={`w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ${item.isWeekly ? 'opacity-30' : ''
-                    }`}
+                  fill
+                  className={`object-cover transform group-hover:scale-110 transition-transform duration-500 ${
+                    item.isWeekly ? 'opacity-30' : ''
+                  }`}
+                  // 👇 外部URL（Unsplash）の場合は最適化をスキップ（設定なしで表示するため）
+                  unoptimized={typeof item.image === 'string'}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
+                
                 {/* 週替わりメニュー専用の視覚的演出 */}
                 {item.isWeekly && (
                   <>
-                    {/* 器のシルエット（薄く光る縁） */}
+                    {/* 器のシルエット */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div
+                      <div 
                         className="w-48 h-32 rounded-full border-2 border-white/15 opacity-40"
                         style={{
                           boxShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
                         }}
                       />
                     </div>
-                    {/* 期待感を高めるテキストオーバーレイ */}
+                    {/* COMING SOON テキスト */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <p
+                      <p 
                         className="text-white/40 text-sm tracking-widest"
-                        style={{
+                        style={{ 
                           textShadow: '0 0 10px rgba(255, 255, 255, 0.3)',
                           letterSpacing: '0.3em',
                         }}
@@ -132,12 +143,12 @@ export default function Menu() {
               {/* コンテンツ */}
               <div className="p-6">
                 <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-2xl">{item.name}</h3>
+                  <h3 className="text-2xl text-white">{item.name}</h3>
                   {item.price && (
                     <span className="text-xl text-[#C62A2A]">{item.price}</span>
                   )}
                 </div>
-                <p
+                <p 
                   className="text-gray-400 whitespace-pre-line"
                   style={{
                     lineHeight: '1.5',
