@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "flatten-out": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/flatten-out.ps1",
     "start": "next start",
     "lint": "eslint"
   },
